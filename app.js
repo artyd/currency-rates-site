@@ -17,7 +17,6 @@ const ratesBody = document.querySelector("#ratesBody");
 const emptyState = document.querySelector("#emptyState");
 const searchInput = document.querySelector("#searchInput");
 const sortSelect = document.querySelector("#sortSelect");
-const marketCards = document.querySelector("#marketCards");
 const tickerTrack = document.querySelector("#tickerTrack");
 
 async function loadRates() {
@@ -72,7 +71,6 @@ function render() {
   const rates = getFilteredRates();
   ratesCount.textContent = `${state.rates.length} валют`;
   emptyState.hidden = rates.length > 0;
-  renderCards();
   renderTicker();
 
   ratesBody.innerHTML = rates
@@ -121,28 +119,6 @@ function updateLiveRates() {
   render();
 }
 
-function renderCards() {
-  const featured = state.rates.slice(0, 4);
-  marketCards.innerHTML = featured
-    .map((rate) => {
-      const direction = rate.lastChange >= 0 ? "up" : "down";
-      const sign = rate.lastChange >= 0 ? "+" : "";
-      return `
-        <article class="market-card">
-          <div class="card-top">
-            <div>
-              <div class="card-code">${escapeHtml(rate.code)}</div>
-              <div class="card-name">${escapeHtml(rate.name)}</div>
-            </div>
-            <span class="change-pill ${direction}">${sign}${formatRate.format(rate.lastChange)}</span>
-          </div>
-          <div class="card-price">${formatRate.format(rate.sell)}</div>
-        </article>
-      `;
-    })
-    .join("");
-}
-
 function renderTicker() {
   const items = state.rates
     .map((rate) => {
@@ -158,7 +134,7 @@ function renderTicker() {
     })
     .join("");
 
-  tickerTrack.innerHTML = `${items}${items}`;
+  tickerTrack.innerHTML = `${items}${items}${items}`;
 }
 
 function snapshotRates() {
