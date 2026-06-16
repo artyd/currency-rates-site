@@ -28,8 +28,8 @@ body {
 
 .ticker {
   overflow: hidden;
-  border-bottom: 1px solid rgba(23, 32, 42, 0.08);
-  background: rgba(255, 255, 255, 0.76);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: #101827;
   backdrop-filter: blur(14px);
 }
 
@@ -46,13 +46,13 @@ body {
   display: inline-flex;
   gap: 8px;
   align-items: center;
-  color: var(--muted);
+  color: #b9c4d4;
   font-size: 13px;
   font-weight: 700;
 }
 
 .ticker-code {
-  color: var(--ink);
+  color: #ffffff;
 }
 
 .ticker-up {
