@@ -7,19 +7,28 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track" id="tickerTrack"></div>
+    </div>
     <main class="page">
       <section class="hero" aria-labelledby="page-title">
         <div>
-          <p class="eyebrow">Оновлення з Excel через JSON</p>
+          <p class="eyebrow">Live exchange board</p>
           <h1 id="page-title">Курси валют</h1>
-          <p class="lead">Публічна таблиця курсів для GitHub Pages з пошуком, сортуванням і швидким переглядом різниці купівлі та продажу.</p>
+          <p class="lead">Дані беруться з JSON, а екран показує живе оновлення цін з підсвіткою руху ринку.</p>
         </div>
         <div class="summary" aria-label="Підсумок">
+          <div class="status-line">
+            <span class="live-dot"></span>
+            <span>Live</span>
+          </div>
           <span class="summary-label">Оновлено</span>
           <strong id="updatedAt">...</strong>
           <span id="ratesCount">0 валют</span>
         </div>
       </section>
+
+      <section class="market-cards" id="marketCards" aria-label="Ключові курси"></section>
 
       <section class="toolbar" aria-label="Фільтри">
         <label class="search">
