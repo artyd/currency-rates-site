@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Курси валют</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">Оновлення з Excel через JSON</p>
+          <h1 id="page-title">Курси валют</h1>
+          <p class="lead">Публічна таблиця курсів для GitHub Pages з пошуком, сортуванням і швидким переглядом різниці купівлі та продажу.</p>
+        </div>
+        <div class="summary" aria-label="Підсумок">
+          <span class="summary-label">Оновлено</span>
+          <strong id="updatedAt">...</strong>
+          <span id="ratesCount">0 валют</span>
+        </div>
+      </section>
+
+      <section class="toolbar" aria-label="Фільтри">
+        <label class="search">
+          <span>Пошук</span>
+          <input id="searchInput" type="search" placeholder="USD, EUR, долар..." autocomplete="off">
+        </label>
+        <label class="select">
+          <span>Сортування</span>
+          <select id="sortSelect">
+            <option value="code">Код валюти</option>
+            <option value="buy">Купівля</option>
+            <option value="sell">Продаж</option>
+            <option value="spread">Спред</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="table-wrap" aria-label="Таблиця курсів валют">
+        <table>
+          <thead>
+            <tr>
+              <th>Валюта</th>
+              <th>Назва</th>
+              <th>Купівля</th>
+              <th>Продаж</th>
+              <th>НБУ</th>
+              <th>Спред</th>
+            </tr>
+          </thead>
+          <tbody id="ratesBody"></tbody>
+        </table>
+        <p class="empty" id="emptyState" hidden>Нічого не знайдено.</p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
